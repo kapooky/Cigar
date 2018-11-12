@@ -319,8 +319,11 @@
                     }
                     drawLeaderboard();
                 }
-				if (globalFlags & 64)
-					for (var i in cells.byId) cells.byId[i].destroy(null);
+                if (globalFlags & 64) {
+                    for (var i in cells.byId) cells.byId[i].destroy(null);
+                    leaderboard.items.splice(0, leaderboard.items.length);
+                    drawLeaderboard();
+                }
                 while (globalFlags & 128 && (id = reader.getUint32()) !== 0) {
                     type = reader.getUint8();
                     x = reader.getInt32();
