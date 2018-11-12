@@ -319,7 +319,9 @@
                     }
                     drawLeaderboard();
                 }
-                while (globalFlags & 64 && (id = reader.getUint32()) !== 0) {
+				if (globalFlags & 64)
+					for (var i in cells.byId) cells.byId[i].destroy(null);
+                while (globalFlags & 128 && (id = reader.getUint32()) !== 0) {
                     type = reader.getUint8();
                     x = reader.getInt32();
                     y = reader.getInt32();
@@ -333,7 +335,7 @@
                     cells.list.push(item);
                     if (flags & 1) cells.mine.push(id);
                 }
-                while (globalFlags & 128 && (id = reader.getUint32()) !== 0) {
+                while (globalFlags & 256 && (id = reader.getUint32()) !== 0) {
                     flags = reader.getUint8();
                     x = flags & 1 ? reader.getInt32() : null;
                     y = flags & 1 ? reader.getInt32() : null;
@@ -357,13 +359,13 @@
                     if (skin) item.setSkin(skin);
                     if (name) item.setName(name);
                 }
-                while (globalFlags & 256 && (killed = reader.getUint32()) !== 0) {
+                while (globalFlags & 512 && (killed = reader.getUint32()) !== 0) {
                     killer = reader.getUint32();
                     if (!cells.byId.hasOwnProperty(killer) || !cells.byId.hasOwnProperty(killed))
                         continue;
                     cells.byId[killed].destroy(killer);
                 }
-                while (globalFlags & 512 && (item = reader.getUint32()) !== 0) {
+                while (globalFlags & 1024 && (item = reader.getUint32()) !== 0) {
                     item = cells.byId[item] || null;
                     if (!item || item.destroyed) continue;
                     item.destroy(null);
