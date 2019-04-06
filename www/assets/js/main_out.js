@@ -904,7 +904,7 @@
         this.setColor(color);
         this.setName(name);
         this.setSkin(skin);
-        this.jagged = type === 2;
+        this.jagged = type === 2 || type === 4;
         this.ejected = type === 3;
         this.born = syncUpdStamp;
     }
