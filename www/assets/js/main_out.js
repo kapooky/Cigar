@@ -1,3 +1,5 @@
+
+
 (function(wHandle, wjQuery) {
     if (navigator.appVersion.indexOf("MSIE") != -1)
 	   alert("You're using a pretty old browser, some parts of the website might not work properly.");
@@ -22,7 +24,7 @@
     }
     function colorToBytes(color) {
         if (color.length === 4)
-            return { r: parseInt(color[1] + color[1], 16), g: parseInt(color[2] + color[2], 16), b: parseInt(color[3] + color[3], 16) };
+           return { r: parseInt(color[1] + color[1], 16), g: parseInt(color[2] + color[2], 16), b: parseInt(color[3] + color[3], 16) };
         else if (color.length === 7)
             return { r: parseInt(color[1] + color[2], 16), g: parseInt(color[3] + color[4], 16), b: parseInt(color[5] + color[6], 16) };
         throw new Error(`invalid color ${color}`);
@@ -282,7 +284,7 @@
             case 0x12: // clear all
                 for (var i in cells.byId)
                     cells.byId[i].destroy(null);
-            case 0x14: // clear my cells
+           case 0x14: // clear my cells
                 cells.mine = [];
                 break;
             case 0x15: // draw line
@@ -689,6 +691,7 @@
                     text = leaderboard.items[i];
                 else
                     text = leaderboard.items[i].name,
+                        //tariq what the fuck is leaderboard.items[i].me
                     isMe = leaderboard.items[i].me;
 
                 // replace {skin} with empty string
