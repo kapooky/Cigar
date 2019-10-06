@@ -51,7 +51,6 @@
 
                 <div class="form-group">
                     <input id="nick" class="form-control save" data-box-id="0" placeholder="Nick" maxlength="15" />
-                    <input id="skinurl" class="form-control save" data-box-id="0" placeholder="Paste the skin url here" maxlength="40" />
                     <select id="gamemode" class="form-control" onchange="setserver($(this).val());" required>
                         <option selected disabled>Servers:</option>
                         <option value="127.0.0.1:443">Local</option>
@@ -64,7 +63,7 @@
                         <a data-toggle="modal" data-target="#inPageModal" onclick="openSkinsList();" class="btn-primary btn btn-info" role="button" style="width: 100%;">Skins Gallery</a>
                     </div>
 
-                    <button type="button" id="play-btn" onclick="play(document.getElementById('nick').value);play(document.getElementById('skinurl').value); return false;" class="btn btn-play btn-primary btn-needs-server">Play</button>
+                    <button type="button" id="play-btn" onclick="play(document.getElementById('nick').value); return false;" class="btn btn-play btn-primary btn-needs-server">Play</button>
                     <button onclick="$('#settings, #instructions').toggle(); return false;" class="btn btn-info btn-settings" id="settings-btn"><i class="glyphicon glyphicon-cog"></i></button>
                     <br clear="both" />
                 </div>
