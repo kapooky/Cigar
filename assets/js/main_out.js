@@ -1,8 +1,10 @@
 
 
+//hello world
 (function(wHandle, wjQuery) {
     if (navigator.appVersion.indexOf("MSIE") != -1)
         console.log("hello world");
+
 	   alert("You're using a pretty old browser, some parts of the website might not work properly.");
 
     Date.now || (Date.now = function() {
