@@ -1,5 +1,5 @@
 /* GLOBAL */
-/* why is this not working */
+
 body {
     padding: 0;
     margin: 0;
@@ -71,8 +71,13 @@ body {
 }
 
 #chat_textbox {
-
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    position: absolute;
     z-index: 1;
+    bottom: 10px;
     background: rgba(0, 0, 0, .2);
     border: 0px;
     outline: none;
@@ -86,57 +91,6 @@ body {
 #chat_textbox:focus {
     background: rgba(0, 0, 0, .5);
 }
-
-#emotes-list{
-    display:flex;
-    flex-flow: row;
-    margin: 2px 0 0 3px;
-}
-
-#chat-components{
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-
-    position:absolute;
-    bottom: 10px;
-}
-
-
-
-
-#chat-emote-btn {
-    /* background-image: url("../emotes/HeyGuys.png"); */
-    background-color: rgba(255, 255, 255, .6);
-    background-position: center;
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    padding: 0;
-    margin: 0;
-    width: 24px;
-    height: 24px;
-    border: none;
-    border-left: 1px solid rgb(71, 71, 71);
-    pointer-events: auto;
-    user-select: auto;
-    -webkit-user-select: auto;
-    -moz-user-select: auto;
-    -ms-user-select: auto;
-}
-
-#chat-emote-btn:hover {
-    -webkit-filter: none; /* Safari 6.0 - 9.0 */
-    filter: none;
-    box-shadow: inset 0px 0px 5px #000;
-}
-
-
-
-
-
-
-
 
 #footer {
     text-align: center;
