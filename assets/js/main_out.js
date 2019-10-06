@@ -1,6 +1,6 @@
 
 
-//hello world
+//hello world boys
 (function(wHandle, wjQuery) {
     if (navigator.appVersion.indexOf("MSIE") != -1)
         console.log("hello world");
